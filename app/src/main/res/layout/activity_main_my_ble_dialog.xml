@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_eaeaea_background"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/connectBle"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <ImageButton
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_close"
+            />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--            숟가락, 젓가락-->
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <!--숫가락-->
+                 <LinearLayout
+            android:elevation="4dp"
+            android:background="@drawable/main_white_background"
+            android:layout_margin="5dp"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            <ImageView
+                android:id="@+id/testSpoon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_spoon"
+                android:layout_marginRight="3dp"
+                />
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spoon"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="3dp"
+                    />
+                    <TextView
+                        android:id="@+id/SpoonBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- %"
+                        android:textSize="10dp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switch_ble_spoon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_circle"
+                    android:track="@drawable/swtich_track_selector"
+                    android:gravity="right" />
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+<!--젓가락-->
+                <LinearLayout
+                    android:elevation="4dp"
+                    android:background="@drawable/main_white_background"
+                    android:layout_margin="5dp"
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    >
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_fork"
+                    android:layout_marginRight="3dp"
+                    android:id="@+id/testFK"
+                    />
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fork"
+                        android:textColor="#000000"
+                        android:textSize="14dp"
+                        android:layout_marginBottom="3dp"
+                        />
+                    <TextView
+                        android:id="@+id/ForkBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" - %"
+                        android:textSize="10dp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="3dp"/>
+                    </LinearLayout>
+                    <Switch
+                        android:id="@+id/switch_ble_fork"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:thumb="@drawable/switch_circle"
+                        android:track="@drawable/swtich_track_selector"/>
+
+
+                </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+                <!--포크스푼-->
+                <LinearLayout
+                    android:elevation="4dp"
+                    android:background="@drawable/main_white_background"
+                    android:layout_margin="5dp"
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    >
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <ImageView
+                            android:id="@+id/testForkSpoon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/ic_fork"
+                            android:layout_marginRight="3dp"
+                            />
+                        <LinearLayout
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="right">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/forkspoon"
+                                    android:textColor="#000000"
+                                    android:textSize="14dp"
+                                    android:layout_marginBottom="3dp"
+                                    />
+                                <TextView
+                                    android:id="@+id/ForkSpoonBattery"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" - %"
+                                    android:textSize="10dp"
+                                    android:textColor="#000000"
+                                    android:layout_marginLeft="3dp"/>
+
+                            </LinearLayout>
+
+
+                            <Switch
+                                android:id="@+id/switch_ble_forkspoon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:thumb="@drawable/switch_circle"
+                                android:track="@drawable/swtich_track_selector"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/button_back_blue"
+                android:text="확인"
+                android:textSize="13dp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

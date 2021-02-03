@@ -1,0 +1,275 @@
+<resources>
+    <string name="app_name">TestBle</string>
+    <string name="access_info">이용약관 및 개인정보 취급방침</string>
+    <string name="access_phone">휴대폰 번호를 입력해 주세요.</string>
+    <string name="get_access_number">인증번호 발송</string>
+    <string name="check_access_number">인증번호 확인</string>
+    <string name="access_Success">인증 성공</string>
+    <string name="access_Wrong">인증번호가 다릅니다! 다시 확인해주세요</string>
+    <string name="Time_end">인증번호 유효시간이 만료되었습니다. 인증번호 전송을 다시 클릭해주세요.</string>
+    <!--    <string name="access_term">이용약관 및 개인정보 취급방침</string>-->
+    <string name="sign_up">회원가입</string>
+    <string name="birth_year">태어난 해</string>
+    <string name="isMale">성별</string>
+    <string name="bodyInfo">신체정보</string>
+    <string name="targetInterval">목표식사속도</string>
+    <string name="signup_success">가입 완료!</string>
+    <string name="year">년</string>
+    <string name="second">초</string>
+    <string name="male">남자</string>
+    <string name="female">여자</string>
+    <string name="height">키</string>
+    <string name="weight">몸무게</string>
+    <string name="heightNweight">키, 몸무게</string>
+    <string name="breakfast">아침</string>
+    <string name="lunch">점심</string>
+    <string name="dinner">저녁</string>
+    <string name="set_Time">식사시간 설정</string>
+    <string name="alarm_Before_30">30분전 식사알림 설정</string>
+    <string name="Before_30">식사시간 30분전 입니다.</string>
+    <string name="target_meal_interval">목표 식사 간격</string>
+    <string name="setNickname">닉네임 (별명)</string>
+    <string name="goToNext">다음</string>
+    <string name="signDone">완료</string>
+    <string name="bloodSugar">혈당</string>
+    <string name="bloodPressure">혈압</string>
+    <string name="HbloodPressure">최고혈압</string>
+    <string name="LbloodPressure">최저혈압</string>
+    <string name="startMeal">식사 시작 시간</string>
+    <string name="wastingTime">소요 시간</string>
+    <string name="mealCount">식사 횟수</string>
+    <string name="successMealCount">정상 식사 횟수</string>
+    <string name="percentOfSuccessCount">식사 평가</string>
+    <string name="avgMealTime">식사 속도</string>
+    <string name="avgMealTime2">평균 식사 속도</string>
+    <string name="connectBle">블루투스 연결</string>
+    <string name="spoon">스푼</string>
+    <string name="fork">포크</string>
+    <string name="forkspoon">포크스푼</string>
+    <string name="weighingMachine">체중계</string>
+    <string name="submit">확인</string>
+    <string name="access">승인</string>
+    <string name="deny">거절</string>
+    <string name="insertMealInfo">식사 정보 작성</string>
+    <string name="insertHealthInfo">건강 정보 작성</string>
+    <string name="TimeNowMeal">현재 식사 중입니다.</string>
+    <string name="FasterThenTargetTime">식사 속도가 너무 빠릅니다!</string>
+    <string name="OnTargetTime">정상 속도입니다.</string>
+    <string name="fewAgo">방금 전</string>
+    <string name="Now">현재 시간</string>
+    <string name="GoalTime">목표 속도</string>
+    <string name="CheckNowMealInfo">현재 식사 정보 확인</string>
+    <string name="Insert">입력하기</string>
+    <string name="save">저장</string>
+    <string name="pairing">페어링</string>
+    <string name="auto_pairing">자동 페어링</string>
+    <string name="turn_off_Auto_pairing">자동 페어링을 끄면 기기를 자동으로 스캔하지 않고 수동 클릭으로 기기를 연결 하셔야 합니다. 자동 페어링을 끄시겠습니까?</string>
+    <string name="turn_off">끄기</string>
+    <string name="alarmMode">알림 모드</string>
+    <string name="vibrate">진동 알림</string>
+    <string name="alarmSound">알림음</string>
+    <string name="MealTimeSetting">식사 시간 설정</string>
+    <string name="TermOfMeal">목표식사속도 설정 </string>
+    <string name="PleaseEnterTheYear">태어난 년도를 입력해주세요!</string>
+    <string name="PleaseEnterTheHeight">키를 입력해주세요!</string>
+    <string name="PleaseEnterTheWeight">몸무게를 입력해주세요!</string>
+    <string name="PleaseEnterTheTime">시간을 입력해주세요!</string>
+    <string name="PleaseEnterTheBreakFastTime">아침 식사시간을 입력해주세요!</string>
+    <string name="PleaseEnterTheLunchTime">점심 식사시간을 입력해주세요!</string>
+    <string name="PleaseEnterTheDinnerTime">저녁 식사시간을 입력해주세요!</string>
+    <string name="PleaseEnterTheGoalTime">목표 식사간격을 입력해주세요!</string>
+    <string name="PleaseEnterTheNickname">닉네임을 입력해주세요!</string>
+    <string name="WrongPhoneNumber"> 잘못된 번호입니다!</string>
+    <string name="TryAgain">다시 시도해주세요!</string>
+    <string name="AccessNumberIsSended">인증번호가 전송되었습니다.</string>
+    <string name="PleaseAccessYourPhone">휴대폰을 먼저 인증해주세요.</string>
+    <string name="HealthInfo">건강 정보</string>
+    <string name="FoodInfo">식사 정보</string>
+    <string name="oneWeek">일주일</string>
+    <string name="oneMonth">한달</string>
+    <string name="oneYear">일년</string>
+    <string name="myGraph">식사 - 건강정보 그래프</string>
+    <string name="TodaysStateUpLoadComplete">오늘의 건강 정보가 등록되었어요.</string>
+    <string name="Friend">친구</string>
+    <string name="FriendRequest">친구 요청</string>
+    <string name="PleaseEnterTheFriendsNumber">핸드폰번호를 입력해주세요.</string>
+    <string name="sendFriendRequest">친구 추가 요청</string>
+    <string name="friend_duplication">이미 등록된 친구입니다.</string>
+    <string name="no_member">가입되지 않은 전화번호입니다.</string>
+    <string name="FriendRequestSuccess">친구 신청 완료!</string>
+    <string name="EndMeal">식사 종료</string>
+    <string name="WantEndMeal">식사를 종료할까요?</string>
+    <string name="End">종료</string>
+    <string name="Continue">계속</string>
+    <string name="InsertTodayHealth">오늘의 건강정보 등록하기</string>
+    <string name="diary">다이어리</string>
+    <string name="Login">로그인</string>
+    <string name="My_Graph">My - 그래프</string>
+    <string name="setTime">시간 설정</string>
+    <string name="timeFast">빠름</string>
+    <string name="timeNormal">보통</string>
+    <string name="timeSlow">천천히</string>
+    <string name="timeMoreSlow">아주 천천히</string>
+    <string name="access_term">이용약관</string>
+    <string name="access_privacy">개인정보 취급방침</string>
+    <string name="FoodWeight">식사량</string>
+    <string name="BPnBs">혈압 - 혈당</string>
+    <string name="MaxBP">최고 혈압</string>
+    <string name="MinBP">최저 혈압</string>
+    <string name="Bs">혈당</string>
+    <string name="cancel">취소</string>
+    <string name="setting_unit">단위설정</string>
+    <string name="alarm1">기본음</string>
+    <string name="alarm2">음성</string>
+    <string name="alarm3">경고음2</string>
+    <string name="quarter">분기</string>
+    <string name="userSelect">직접 선택</string>
+    <string name="Please_Enter_PhoneNumber">핸드폰 번호를 입력해 주세요.</string>
+    <string name="Please_Enter_AccessNumber">인증번호를 입력해주세요.</string>
+    <string name="EnterTimer">입력 시간</string>
+    <string name="Meal">섭취량</string>
+    <string name="FoodSpeed">식사속도</string>
+    <string name="Meal_Weight">섭취량 - 몸무게</string>
+    <string name="FoodSpeed_Weight">식사속도 - 몸무게</string>
+    <string name="Name">이름</string>
+    <string name="Total_Data">종합정보 데이터</string>
+    <string name="Setting">설정</string>
+    <string name="Address_Spoon">스푼 주소</string>
+    <string name="Address_Fork">포크 주소</string>
+    <string name="Address_ForkSpoon">포크스푼 주소</string>
+    <string name="Fork_DisConnected">포크 끊어짐</string>
+    <string name="Spoon_DisConnected">스푼 끊어짐</string>
+    <string name="ForkSpoon_DisConnected">포크스푼 끊어짐</string>
+    <string name="Select_done">선택 완료</string>
+    <string name="Set_Meal_interval">식사 간격 설정</string>
+    <string name="Today_day">오늘 날짜</string>
+    <string name="Total_analysis">종합 데이터 분석</string>
+    <string name="Graph">그래프</string>
+    <string name="Please_Select">선택 해주세요</string>
+    <string name="Please_Select_Date">날짜를 선택 해주세요</string>
+    <string name="Start_Date">시작 날짜</string>
+    <string name="End_Date">마지막 날짜</string>
+    <string name="Quarter">분기</string>
+    <string name="Quarter_1">1 분기</string>
+    <string name="Quarter_2">2 분기</string>
+    <string name="Quarter_3">3 분기</string>
+    <string name="Quarter_4">4 분기</string>
+    <string name="You_cant_send_request_your_number">자신의 번호에는 친구 신청을 할 수 없어요.</string>
+    <string name="Request_Success">승인되었습니다.</string>
+    <string name="Request_Fail">거절되었습니다.</string>
+    <string name="Request_State_Success">승인</string>
+    <string name="Request_State_Fail">거절</string>
+    <string name="Request_State_Wait">대기</string>
+    <string name="Empty_Friend_Request">친구 요청이 없습니다.</string>
+    <string name="Please_Enter_Correct_Number">정확한 번호를 입력해주세요.</string>
+    <string name="Device_Changed_Retry">기기가 변경되었습니다. 다시 인증해주세요!</string>
+    <string name="Already_Sign_member">이미 가입된 회원</string>
+    <string name="Already_Sign_member_2">이미 가입된 번호에요! 정보를 불러올까요?</string>
+    <string name="Enter_Time">입력시간</string>
+    <string name="SucFoodPercent">식사 성공률</string>
+
+    <string name="Eating_Habits_Good">% 로 좋은 식습관을 유지하고 있습니다.</string>
+    <string name="Eating_Habits_Normal">% 로 식습관 개선이 필요합니다.</string>
+    <string name="Eating_Habits_Bad">% 로 식습관을 위해 더 노력이 필요합니다.</string>
+
+    <string name="Eating_Speed_Normal">% 로 정상적으로 식사를 하고 있습니다.</string>
+    <string name="Eating_Speed_Fast">% 로 빠르게 식사를 하여 천천히 먹는것에 초점을 맞추는 식습관을 추천드립니다.</string>
+    <string name="Eating_Speed_VeryFast">% 로 매우 빠르게 식사를 하여 천천히 먹는것에 초점을 맞추는 식습관을 추천드립니다.</string>
+
+    <string name="Weight_difference_Lose">kg의 감량을 성공하셨습니다</string>
+    <string name="Weight_difference_Zero">체중의 변화가 없습니다.</string>
+    <string name="Weight_difference_Increase">kg 증가했습니다.</string>
+
+    <string name="Weekly_Weight_Change">주간 체중의 변화량은 최고</string>
+    <string name="Month_Weight_Change">월간 체중의 변화량은 최고</string>
+    <string name="Year_Weight_Change">연간 체중의 변화량은 최고</string>
+    <string name="Quarter_Weight_Change">이 분기 체중의 변화량은 최고</string>
+    <string name="Select_Weight_Change">선택하신 기간의 체중의 변화량은 최고</string>
+
+    <string name="Please_Enter_BasicSend">입력값이 없어 기본값으로 표기됩니다.</string>
+    <string name="Please_Enter_BasicFirst">입력값이 없어 기본값으로 표기됩니다. *몸무게는 체중계 아이콘을 눌르면 블루투스로 측정 후 값이 자동으로 입력됩니다.</string>
+    <string name="Please_Enter_BloodSugar">혈당을 입력해주세요.</string>
+    <string name="Please_Enter_MinBloodP">최저 혈압을 입력해주세요.</string>
+    <string name="Please_Enter_MaxBloodP">최고 혈압을 입력해주세요.</string>
+    <string name="Please_Enter_Height">키를 입력해주세요.</string>
+    <string name="Please_Enter_Weight">몸무게를 입력해주세요.</string>
+
+
+    <string name="January">1월</string>
+    <string name="February">2월</string>
+    <string name="March">3월</string>
+    <string name="April">4월</string>
+    <string name="May">5월</string>
+    <string name="June">6월</string>
+    <string name="July">7월</string>
+    <string name="August">8월</string>
+    <string name="September">9월</string>
+    <string name="October">10월</string>
+    <string name="November">11월</string>
+    <string name="December">12월</string>
+
+    <string name="Day">일</string>
+    <string name="Month">월</string>
+
+
+    <string name="Monday">월</string>
+    <string name="Tuesday">화</string>
+    <string name="Wednesday">수</string>
+    <string name="Thursday">목</string>
+    <string name="Friday">금</string>
+    <string name="Saturday">토</string>
+    <string name="Sunday">일</string>
+
+
+    <string name="Search_weight_machine">체중계 검색중...</string>
+    <string name="Start_weight_machine">측정을 시작합니다.</string>
+    <string name="Fail">실패</string>
+
+
+    <string name="New_Spoon_Searched">새로운 스푼 검색</string>
+    <string name="New_Fork_Searched">새로운 포크 검색</string>
+    <string name="New_ForkSpoon_Searched">새로운 포크스푼 검색</string>
+
+
+    <string name="Ask_New_Spoon_Connect">스푼을 연결 하시겠습니까?</string>
+    <string name="Ask_New_Fork_Connect">포크를 연결 하시겠습니까?</string>
+    <string name="Ask_New_ForkSpoon_Connect">포크스푼을 연결 하시겠습니까?</string>
+
+
+    <string name="New_Spoon_Connect">새로운 스푼 연결</string>
+    <string name="New_Fork_Connect">새로운 포크 연결</string>
+    <string name="New_ForkSpoon_Connect">새로운 포크스푼 연결</string>
+
+    <string name="Remove_Ex_Spoon">기존의 사용했던 스푼을 끊고 새로운 스푼을 연결하시겠습니까?</string>
+    <string name="Remove_Ex_Fork">기존의 사용했던 포크를 끊고 새로운 포크를 연결하시겠습니까?</string>
+    <string name="Remove_Ex_ForkSpoon">기존의 사용했던 포크스푼을 끊고 새로운 포크스푼을 연결하시겠습니까?</string>
+
+
+    <string name="GPS_Activate">위치 서비스 비활성화</string>
+    <string name="GPS_Activate_Essential">앱을 사용하기 위해서는 위치 서비스가 필요합니다.</string>
+    <string name="GPS_Activate_Permission">이 앱을 실행하려면 위치 접근 권한이 필요합니다.</string>
+
+
+    <string name="Search_Around_Device">주변 기기 검색중...</string>
+
+
+    <string name="Spoon_Error_Please_Reboot">스푼 오류입니다. 스푼을 재부팅 해주세요.</string>
+    <string name="Fork_Error_Please_Reboot">포크 오류입니다. 포크를 재부팅 해주세요.</string>
+    <string name="ForkSpoon_Error_Please_Reboot">포크스푼 오류입니다. 포크스푼을 재부팅 해주세요.</string>
+
+
+    <string name="Spoon_Connect_Success">스푼연결 성공!</string>
+    <string name="Fork_Connect_Success">포크연결 성공!</string>
+    <string name="ForkSpoon_Connect_Success">포크스푼 연결 성공!</string>
+
+
+    <string name="Spoon_Disconnected">스푼 연결이 끊어졌습니다.</string>
+    <string name="Fork_Disconnected">포크 연결이 끊어졌습니다.</string>
+    <string name="ForkSpoon_Disconnected">포크스푼 연결이 끊어졌습니다.</string>
+
+    <string name="BackPressed_twice">뒤로가기 버튼을 두번 누르면 앱이 종료됩니다.</string>
+
+
+    <string name="Please_Send_AccessNumber_First">인증번호를 먼저 발송해 주세요.</string>
+
+</resources>

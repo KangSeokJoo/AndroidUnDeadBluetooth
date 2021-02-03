@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/toast_layout"
+    android:orientation="vertical"
+    android:padding="10dp" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/custom_toast"
+    >
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_close"
+        android:id="@+id/custom_toast_image"
+        />
+    <TextView
+        android:id="@+id/custom_toast_text"
+        android:textSize="15sp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Fork_DisConnected"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+</LinearLayout>
+
