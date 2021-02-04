@@ -52,8 +52,12 @@ public class DataProcess {
     private static int targetTime;
 
     private static ArrayList<Integer> mTimeArray = new ArrayList<>();
+
     String DayExTimer;
     Timer ExTimer;
+
+    public static ArrayList<String> dateList = new ArrayList<>();
+    public static ArrayList<String> batteryList = new ArrayList<>();
     public static void clear() {
         startTime = 0;
         endTime = 0;
@@ -97,15 +101,21 @@ public class DataProcess {
         // 4 : Z
         // 5 : Battery, FF 73 0D 0A
         String battery = new String(BluetoothLeService.hexStringToByteArray(_datas[5].replace(" ", "").substring(0, 6)));
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1000);
-                    LogMain.temp = battery;
-                    if (LogMain.cnt < 1000){
-                        LogMain.cnt++;
-                    }
+                    Thread.sleep(500); // 후에 5초로 늘릴것
+                        long now = System.currentTimeMillis(); // 현재시간 받아오기
+                        Date date = new Date(now); // Date 객체 생성
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String nowTime = sdf.format(date);
+
+//                        LogMain.temp = battery;
+                        dateList.add(nowTime);
+                        batteryList.add(battery);
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -369,11 +379,7 @@ public class DataProcess {
             sendHandler();
         }
 
-
-
-
         _data += String.format(this.name + " Count : %d, Success : %d\n", allCount, successCount);
-
 
     }
 

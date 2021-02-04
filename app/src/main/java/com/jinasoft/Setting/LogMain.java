@@ -21,6 +21,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.jinasoft.BlueTooth.AlarmReceiver;
 import com.jinasoft.BlueTooth.BluetoothLeService;
+import com.jinasoft.BlueTooth.DataProcess;
 import com.jinasoft.Main.BLEConnectDialog;
 import com.jinasoft.Main.MainActivity;
 import com.jinasoft.Main.R;
@@ -35,21 +36,24 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static com.jinasoft.BlueTooth.BluetoothLeService.FK;
 
 public class LogMain extends Service {
 
     public static boolean click__ = false;
-    public static int cnt = 0;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
-    public String state = "android";
+    public String state = "android_2";
     public static String temp = "";
-
-    int N;
+    public int cnt = 0;
+    public int cnt2 = 0;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -72,23 +76,24 @@ public class LogMain extends Service {
 
         pref = getApplicationContext().getSharedPreferences("info", MODE_PRIVATE);
         editor = pref.edit();
+        ExecutorService THREAD_POOL = Executors.newFixedThreadPool(2);
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
                     try {
+                        Thread.sleep(360000); // 300000 5분
+                        for (int i=0; i<DataProcess.batteryList.size(); i++){
+                            Log.d("확인5", DataProcess.dateList.get(i) +"/\t" + DataProcess.batteryList.get(i)+"\t"+i +"번째");
 
-                        if (BLEConnectDialog.getBLEDialog() != null) {
-                            BLEConnectDialog.getBLEDialog().setForkBattery(temp.replace(" ", "") + "%");
+                            DataTrans task = new DataTrans();
+                            task.executeOnExecutor(THREAD_POOL, "http://58.230.203.182/test/insert_data_2.php",
+                                    state, DataProcess.dateList.get(i),DataProcess.batteryList.get(i) + " %");
+                            cnt++;
+
                         }
-                        Log.d("확인5", temp +"/" + cnt);
-
-
-                        DataTrans task = new DataTrans();
-                        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "http://58.230.203.182/test/insert_data.php", state, temp + " %");
-                        Thread.sleep(120000); //60초
-
+                        Log.d("확인2", "배열크기 날짜 :" + DataProcess.dateList.size() +"\n배열크기 배터리"+ DataProcess.batteryList.size());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -103,7 +108,6 @@ public class LogMain extends Service {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
         }
 
         @Override
@@ -111,7 +115,7 @@ public class LogMain extends Service {
             super.onPostExecute(result);
 
             String Response;
-            Log.d("확인3", "" + temp);
+            Log.d("확인3","cnt:" + cnt + "  cnt2:"+cnt2);
             try {
 
                 JSONObject obj = new JSONObject(result);
@@ -119,25 +123,33 @@ public class LogMain extends Service {
                 Response = sRES;
 
                 if (Response.equals("Success")) {
+
                     SharedPreferences pref = getApplicationContext().getSharedPreferences("info", MODE_PRIVATE);
                     SharedPreferences.Editor editor = pref.edit();
 
+
                     editor.clear();
                     editor.putString("state", state);
-                    editor.putString("temp", temp);
+                    editor.putString("ble_date", DataProcess.dateList.get(cnt2));
+                    editor.putString("battery", DataProcess.batteryList.get(cnt2));
 
                     editor.commit();
+                    cnt2++;
+                    Log.d("확인7", ""+cnt);
+                    if (cnt2 == cnt){
+                            DataProcess.dateList.clear();
+                            DataProcess.batteryList.clear();
+                            cnt = 0 ;
+                            cnt2 = 0;
+                    }
 
 
-                } else {
+                }else {
                 }
-
 
             } catch (JSONException ex) {
                 ex.printStackTrace();
             }
-
-
         }
 
 
@@ -145,13 +157,14 @@ public class LogMain extends Service {
         protected String doInBackground(String... params) {
 
             String state = (String) params[1];
-            String temp = (String) params[2];
+            String ble_date = (String) params[2];
+            String battery = (String) params[3];
 
 
-            String postParameters = "state=" + state + "&" + "temp=" + temp;
+            String postParameters = "state=" + state + "&" + "ble_date=" + ble_date + "&" + "battery=" + battery;
             try {
 
-                URL url = new URL("http://58.230.203.182/test/insert_data.php");
+                URL url = new URL("http://58.230.203.182/test/insert_data_2.php");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
 

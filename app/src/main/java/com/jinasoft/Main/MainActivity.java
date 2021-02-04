@@ -208,10 +208,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = (Button)findViewById(R.id.btn1);
         button.setOnClickListener(view -> {
-            Log.d("확인3","" + temp);
             if(BluetoothLeService.getState(FK)!=2){
                 if(BLEConnectDialog.getBLEDialog()!=null){
-                    BLEConnectDialog.getBLEDialog().setForkBattery(temp.replace(" ", "") + "%");
+                    BLEConnectDialog.getBLEDialog().setForkBattery(DataProcess.batteryList.get(DataProcess.batteryList.size()-1).replace(" ", "") + "%");
                 }
             }
             Intent intent = new Intent(this, LogMain.class);
@@ -221,7 +220,10 @@ public class MainActivity extends AppCompatActivity {
         Button button1 = (Button)findViewById(R.id.btn2);
         button1.setOnClickListener(view -> {
             TextView textView = (TextView)findViewById(R.id.tv1);
-            textView.setText("포크 배터리 확인 : " +temp +" %");
+            if (DataProcess.batteryList.size() != 0) {
+                textView.setText("포크 배터리 확인 : " + DataProcess.batteryList.get(DataProcess.batteryList.size()-1) + " %");
+            }else {
+            }
         });
 
         BLELayout = findViewById(R.id.my_page_action_ble);
