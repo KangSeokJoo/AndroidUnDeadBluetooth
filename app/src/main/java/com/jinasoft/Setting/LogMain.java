@@ -50,10 +50,13 @@ public class LogMain extends Service {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
-    public String state = "android_2";
+    public String state = "android_3";
     public static String temp = "";
     public int cnt = 0;
     public int cnt2 = 0;
+    public int j = 0;
+    public ArrayList<String> dl = new ArrayList<>();
+    public ArrayList<String> bl = new ArrayList<>();
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -83,16 +86,41 @@ public class LogMain extends Service {
             public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(360000); // 300000 5분
-                        for (int i=0; i<DataProcess.batteryList.size(); i++){
-                            Log.d("확인5", DataProcess.dateList.get(i) +"/\t" + DataProcess.batteryList.get(i)+"\t"+i +"번째");
+                        Thread.sleep(3600000); // 300000 5분 3600000시간
 
-                            DataTrans task = new DataTrans();
-                            task.executeOnExecutor(THREAD_POOL, "http://58.230.203.182/test/insert_data_2.php",
-                                    state, DataProcess.dateList.get(i),DataProcess.batteryList.get(i) + " %");
-                            cnt++;
+                        if (0 < DataProcess.dateList2.size()) {
 
-                        }
+                            for (int i = 0; i < DataProcess.dateList2.size(); i++) {
+                                Log.d("확인5",i + "번째");
+                                cnt++;
+                                    dl.add(DataProcess.dateList2.get(i));
+                                    bl.add(DataProcess.batteryList2.get(i));
+                                DataTrans task = new DataTrans();task.executeOnExecutor(THREAD_POOL, "http://58.230.203.182/test/insert_data_2.php",
+                                        state, dl.get(i),bl.get(i) + " %");
+                                }
+                            for (int i = 0; i < DataProcess.dateList.size(); i++) {
+                                Log.d("확인5",i + "번째");
+                                cnt++;
+                                dl.add(DataProcess.dateList.get(i));
+                                bl.add(DataProcess.batteryList.get(i));
+                                DataTrans task = new DataTrans();task.executeOnExecutor(THREAD_POOL, "http://58.230.203.182/test/insert_data_2.php",
+                                        state, dl.get(i),bl.get(i) + " %");
+                            }
+
+                        }else{
+
+                            for (int i = 0; i < DataProcess.dateList.size(); i++) {
+                                Log.d("확인5",i + "번째");
+                                cnt++;
+                                dl.add(DataProcess.dateList.get(i));
+                                bl.add(DataProcess.batteryList.get(i));
+
+                                DataTrans task = new DataTrans();task.executeOnExecutor(THREAD_POOL, "http://58.230.203.182/test/insert_data_2.php",
+                                        state, dl.get(i),bl.get(i) + " %");
+                            }
+
+                        }DataProcess.Saving = true;
+
                         Log.d("확인2", "배열크기 날짜 :" + DataProcess.dateList.size() +"\n배열크기 배터리"+ DataProcess.batteryList.size());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -115,7 +143,7 @@ public class LogMain extends Service {
             super.onPostExecute(result);
 
             String Response;
-            Log.d("확인3","cnt:" + cnt + "  cnt2:"+cnt2);
+            Log.d("확인3","cnt:" + cnt + "  cnt2:"+cnt2+"    d1:"+dl.size());
             try {
 
                 JSONObject obj = new JSONObject(result);
@@ -130,17 +158,35 @@ public class LogMain extends Service {
 
                     editor.clear();
                     editor.putString("state", state);
-                    editor.putString("ble_date", DataProcess.dateList.get(cnt2));
-                    editor.putString("battery", DataProcess.batteryList.get(cnt2));
+                    editor.putString("ble_date", dl.get(cnt2));
+                    editor.putString("battery", bl.get(cnt2));
 
                     editor.commit();
                     cnt2++;
                     Log.d("확인7", ""+cnt);
-                    if (cnt2 == cnt){
+                    if (cnt2 == cnt && j == 0){
                             DataProcess.dateList.clear();
                             DataProcess.batteryList.clear();
+                            dl.clear();
+                            bl.clear();
                             cnt = 0 ;
                             cnt2 = 0;
+                            DataProcess.Saving = false;
+                            j = 1;
+
+                    }else if (j == 1 && cnt == cnt2
+                    ){
+                        DataProcess.dateList.clear();
+                        DataProcess.batteryList.clear();
+                        DataProcess.dateList2.clear();
+                        DataProcess.batteryList2.clear();
+                        dl.clear();
+                        bl.clear();
+                        cnt = 0 ;
+                        cnt2 = 0;
+                        DataProcess.Saving = false;
+                        j=0;
+
                     }
 
 

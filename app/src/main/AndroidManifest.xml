@@ -16,49 +16,52 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
 
-
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage = "true">
-        <activity android:name="com.jinasoft.Main.MainActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".SubActivity"
+            android:theme="@style/Theme.AppCompat.Translucent"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name="com.jinasoft.Setting.LogMain"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="false">
-        </service>
+            android:stopWithTask="false"></service>
         <service
             android:name="com.jinasoft.BlueTooth.BluetoothLeService"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="false"/>
+            android:stopWithTask="false" />
         <service
             android:name="com.jinasoft.Else.ForecdTerminationService"
-            android:stopWithTask="false"
+            android:enabled="true"
             android:exported="true"
-            android:enabled="true"/>
+            android:stopWithTask="false" />
+
         <activity
-            android:name="com.jinasoft.Main.BLEConnectDialog"
+            android:name=".BLEConnectDialog"
             android:theme="@style/Theme.MyDialog2" />
+
         <receiver
             android:name="com.jinasoft.Setting.Alarm.DeviceBootReceiver"
             android:enabled="false"
@@ -68,6 +71,5 @@
             </intent-filter>
         </receiver>
     </application>
-
 
 </manifest>

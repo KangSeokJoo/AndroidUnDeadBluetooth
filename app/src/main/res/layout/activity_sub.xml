@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubActivity"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scollstop"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font"
+                android:textStyle="normal"
+                android:textFontWeight="400"
+                android:textSize="23sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="#000000"
+                android:text="데이터"
+                android:gravity="center"
+                android:layout_weight="9">
+            </TextView>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_ref"
+                android:backgroundTint="#000000"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#747474"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/background_shape">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:textColor="#094D46"
+                android:textSize="13sp"
+                android:background="#00ffffff"
+                android:text="체온"
+                android:layout_weight="1">
+            </Button>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:background="#747474"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:textColor="#094D46"
+                android:textSize="13sp"
+                android:background="#00ffffff"
+                android:text="활동량"
+                android:layout_weight="1">
+            </Button>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:background="#747474"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:textColor="#094D46"
+                android:textSize="13sp"
+                android:background="#00ffffff"
+                android:text="맥박"
+                android:layout_weight="1">
+            </Button>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:background="#747474"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:textColor="#094D46"
+                android:textSize="13sp"
+                android:background="#00ffffff"
+                android:text="산소포화도"
+                android:layout_weight="1.2"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:background="#747474"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:textColor="#094D46"
+                android:textSize="13sp"
+                android:background="#00ffffff"
+                android:text="기침"
+                android:layout_weight="0.8">
+            </Button>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#00ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최신 업데이트 : yyyy.MM.dd hh:mm AM"
+                android:textColor="#C7C7C7"
+                android:background="#F5F5F5"
+                android:paddingVertical="5dp"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:drawableStart="@drawable/ic_calender"
+                android:layout_marginLeft="10dp"
+                android:paddingStart="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="필터"
+                android:textSize="16sp"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:background="@drawable/background_shape3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최근 24시간 표시"
+                android:textColor="#747474"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="#F5F5F5"/>
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scollstart"
+        app:layout_constraintTop_toBottomOf="@id/scollstop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Theme.AppCompat.Light">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll"
+                app:contentScrim="?attr/colorPrimary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="그래프 이름"
+                        android:fontFamily="@font/font"
+                        android:textFontWeight="400"
+                        android:textSize="18sp"
+                        android:textColor="#005B52"
+                        android:layout_marginLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(단위)"
+                        android:textSize="10sp"
+                        android:textColor="#747474"
+                        android:layout_marginLeft="10dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#747474"/>
+
+                <com.github.mikephil.charting.charts.CombinedChart
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/main_graph_intake"
+                    android:layout_marginTop="10dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="#f5f5f5"/>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/scollstart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="목록 이름"
+                android:textSize="18sp"
+                android:textColor="#005B52"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(단위)"
+                android:textSize="10sp"
+                android:textColor="#747474"
+                android:layout_marginLeft="10dp"/>
+
+            <ListView
+                android:id="@+id/ChartList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </ListView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <!--언더바-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <LinearLayout
+            android:id="@+id/under_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_house"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홈"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:layout_gravity="center"
+                android:textColor="#56A798"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/under_alam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_alam"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="알람"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:layout_gravity="center"
+                android:textColor="#56A798"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/under_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_graph"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="데이터"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:layout_gravity="center"
+                android:textColor="#56A798"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/under_my"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_my"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MY"
+                android:fontFamily="@font/font"
+                android:textFontWeight="400"
+                android:layout_gravity="center"
+                android:textColor="#56A798"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

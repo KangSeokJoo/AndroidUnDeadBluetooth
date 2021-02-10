@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         pref = getApplicationContext().getSharedPreferences("info", MODE_PRIVATE);
         editor = pref.edit();
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkPermissions();
         }
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         if (null == BluetoothLeService.serviceIntent) {
             foregroundServiceIntent = new Intent(this, BluetoothLeService.class);
@@ -164,7 +164,11 @@ public class MainActivity extends AppCompatActivity {
             foregroundServiceIntent = BluetoothLeService.serviceIntent;
             Toast.makeText(getApplicationContext(), "already", Toast.LENGTH_LONG).show();
         }
-
+        Button uibtn = (Button)findViewById(R.id.btn3);
+        uibtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, SubActivity.class);
+            startActivity(intent);
+        });
 
         mStatus = NOT_CONNECTED;
 

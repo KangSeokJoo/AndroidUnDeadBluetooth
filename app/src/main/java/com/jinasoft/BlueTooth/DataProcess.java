@@ -2,9 +2,11 @@ package com.jinasoft.BlueTooth;
 
 
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.jinasoft.Main.BLEConnectDialog;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
 import java.util.Timer;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.jinasoft.BlueTooth.BluetoothLeService.FK;
@@ -39,7 +43,7 @@ public class DataProcess {
     // 데이터 변환
 
     private String name;
-     boolean isRecv = false, isSucceed = true;
+    boolean isRecv = false, isSucceed = true;
     private String datas = "";
     private static long startTime = 0, endTime = 0;
     private static long startMouse = 0;
@@ -55,9 +59,16 @@ public class DataProcess {
 
     String DayExTimer;
     Timer ExTimer;
+    private int c = 0;
+
 
     public static ArrayList<String> dateList = new ArrayList<>();
     public static ArrayList<String> batteryList = new ArrayList<>();
+    public static boolean Saving = false;
+
+    public static ArrayList<String> dateList2 = new ArrayList<>();
+    public static ArrayList<String> batteryList2 = new ArrayList<>();
+
     public static void clear() {
         startTime = 0;
         endTime = 0;
@@ -82,7 +93,7 @@ public class DataProcess {
 //        mTimeArray.clear();
     }
 
-    public void process (){
+    public void process () {
 //            Log.d(name,data);
 //
 //        Log.d("@@@@", name + " : " + data);
@@ -102,25 +113,48 @@ public class DataProcess {
         // 5 : Battery, FF 73 0D 0A
         String battery = new String(BluetoothLeService.hexStringToByteArray(_datas[5].replace(" ", "").substring(0, 6)));
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(500); // 후에 5초로 늘릴것
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    c++;
                         long now = System.currentTimeMillis(); // 현재시간 받아오기
                         Date date = new Date(now); // Date 객체 생성
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         String nowTime = sdf.format(date);
 
-//                        LogMain.temp = battery;
-                        dateList.add(nowTime);
-                        batteryList.add(battery);
+                       if (c == 47 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                        if (Saving == true){
+                            dateList2.add(nowTime);
+                            batteryList2.add(battery);
+                            c = 0;
+                        }else {
+                            dateList.add(nowTime);
+                            batteryList.add(battery);
+                            c = 0;
+                        }
+                           Log.d("확인10", "" + dateList.size()+"     "+dateList2.size());
+                        }if (c == 30 && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+
+                        if (Saving == true) {
+                            dateList2.add(nowTime);
+                            batteryList2.add(battery);
+                            c = 0;
+                        }else{
+                            dateList.add(nowTime);
+                            batteryList.add(battery);
+                            c = 0;
+                        }
+                        Log.d("확인10", "" + dateList.size()+"     "+dateList2.size());
+                    }
                 }
-            }
-        }).start();
+            }).start();
+
+
+
+
+
 
 
 
