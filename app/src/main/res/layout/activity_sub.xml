@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="50dp">
 
             <TextView
                 android:layout_width="0dp"
@@ -199,114 +199,143 @@
             android:background="#F5F5F5"/>
     </LinearLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scollstart"
-        app:layout_constraintTop_toBottomOf="@id/scollstop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme="@style/Theme.AppCompat.Light">
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_scrollFlags="exitUntilCollapsed|scroll"
-                app:contentScrim="?attr/colorPrimary">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="그래프 이름"
-                        android:fontFamily="@font/font"
-                        android:textFontWeight="400"
-                        android:textSize="18sp"
-                        android:textColor="#005B52"
-                        android:layout_marginLeft="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="(단위)"
-                        android:textSize="10sp"
-                        android:textColor="#747474"
-                        android:layout_marginLeft="10dp"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#747474"/>
-
-                <com.github.mikephil.charting.charts.CombinedChart
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:id="@+id/main_graph_intake"
-                    android:layout_marginTop="10dp"
-                    />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="#f5f5f5"/>
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintTop_toBottomOf="@id/scollstart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0">
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/scollstop"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0">-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="5dp">
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:id="@+id/scollstart"
+            app:layout_constraintTop_toBottomOf="@id/scollstop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="목록 이름"
-                android:textSize="18sp"
-                android:textColor="#005B52"
-                android:fontFamily="@font/font"
-                android:textFontWeight="400"
-                android:layout_marginLeft="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(단위)"
-                android:textSize="10sp"
-                android:textColor="#747474"
-                android:layout_marginLeft="10dp"/>
-
-            <ListView
-                android:id="@+id/ChartList"
-                android:layout_width="wrap_content"
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </ListView>
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.AppCompat.Light">
+
+                        <com.google.android.material.appbar.CollapsingToolbarLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+                            app:contentScrim="?attr/colorPrimary">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingVertical="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="그래프 이름"
+                                    android:fontFamily="@font/font"
+                                    android:textFontWeight="400"
+                                    android:textSize="18sp"
+                                    android:textColor="#005B52"
+                                    android:layout_marginLeft="10dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="(단위)"
+                                    android:textSize="10sp"
+                                    android:textColor="#747474"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#747474"/>
+
+                            <com.github.mikephil.charting.charts.CombinedChart
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:id="@+id/main_graph_intake"
+                                android:layout_marginTop="10dp"
+                                />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="5dp"
+                                android:background="#f5f5f5"/>
+
+                        </com.google.android.material.appbar.CollapsingToolbarLayout>
+                    </com.google.android.material.appbar.AppBarLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintTop_toBottomOf="@id/scollstart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="목록 이름"
+                            android:textSize="18sp"
+                            android:textColor="#005B52"
+                            android:fontFamily="@font/font"
+                            android:textFontWeight="400"
+                            android:layout_marginLeft="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(단위)"
+                            android:textSize="10sp"
+                            android:textColor="#747474"
+                            android:layout_marginLeft="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ChartList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#747474"
+                            android:scrollbars="vertical">
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                </LinearLayout>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
 
-    <!--언더바-->
+
+<!--        </ScrollView>-->
+
+        <!--언더바-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

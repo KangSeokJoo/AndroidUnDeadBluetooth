@@ -1,22 +1,17 @@
 package com.jinasoft.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.LauncherActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.DataSetObserver;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Adapter;
+import android.util.Log;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -25,9 +20,13 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
+import java.util.ArrayList;
+
 public class SubActivity extends AppCompatActivity {
 
     LinearLayout UnderHome,UnderAlam,UnderData,UnderMy;
+    ArrayList<String> list = new ArrayList<>();
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +35,21 @@ public class SubActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        for (int i = 0; i < 30; i++){
+            list.add("반복문" + i + "번째");
+            Log.d("확인" ,"" + i);
+        }
+        RecyclerView recyclerView = findViewById(R.id.ChartList);
+
+//        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerList adapter = new RecyclerList(list);
 
 
-        ListView listView = (ListView)findViewById(R.id.ChartList);
+        recyclerView.setAdapter(adapter);
+
 
     }
 
@@ -57,10 +68,10 @@ public class SubActivity extends AppCompatActivity {
         });
         UnderAlam.setOnClickListener(n->{
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("nickname",pref.getString("nickname",""));
-            intent.putExtra("phoneNumber",pref.getString("phoneNumber",""));
-            startActivity(intent);
-            overridePendingTransition(0,0);
+//            intent.putExtra("nickname",pref.getString("nickname",""));
+//            intent.putExtra("phoneNumber",pref.getString("phoneNumber",""));
+//            startActivity(intent);
+//            overridePendingTransition(0,0);
         });
         UnderData.setOnClickListener(n->{
             Intent intnet = new Intent(this, MainActivity.class);
