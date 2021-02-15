@@ -21,9 +21,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.media.AudioManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -59,7 +56,6 @@ import static com.jinasoft.BlueTooth.BluetoothLeService.FK;
 import static com.jinasoft.BlueTooth.BluetoothLeService.FS;
 import static com.jinasoft.BlueTooth.BluetoothLeService.SP;
 import static com.jinasoft.BlueTooth.BluetoothLeService.STATE_CONNECTED;
-import static com.jinasoft.Setting.LogMain.temp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -166,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Button uibtn = (Button)findViewById(R.id.btn3);
         uibtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, SubActivity.class);
+            Intent intent = new Intent(this, DataChart.class);
             startActivity(intent);
         });
 

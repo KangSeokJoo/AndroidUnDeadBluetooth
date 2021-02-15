@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerList extends RecyclerView.Adapter<RecyclerList.ViewHolder> {
-    ArrayList<String> arrayList;
-
+    ArrayList<String> arrayList = new ArrayList<>();
+    String text;
     RecyclerList(ArrayList<String> list) {
         this.arrayList = list;
     }
@@ -31,23 +31,25 @@ public class RecyclerList extends RecyclerView.Adapter<RecyclerList.ViewHolder> 
 
     @NonNull
     @Override
-    public RecyclerList.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.item, parent, false);
-        RecyclerList.ViewHolder vh = new RecyclerList.ViewHolder(view);
-        return vh;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        ViewHolder vh = new ViewHolder(view);
+
+            return vh;
+
     } //레이아웃 생성  -> 뷰홀더를 생성
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String text = arrayList.get(position);
+        text = arrayList.get(position);
+
         holder.tv.setText(text);
     } //재활용 됐을때 실행되는 메서드
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return (null != arrayList ? arrayList.size() : 0);
+
     } // 아이템 개수를 조회
 
 
